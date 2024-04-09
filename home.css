@@ -207,15 +207,22 @@ li p {
 }
 
 .name {
-    width: 92%;
+    width: 65%;
+    margin-bottom: 0%;
+    margin-right: 2%;
+}
+
+.parents, .parents-optional {
+    width: 45.5%;
     margin-bottom: 2%;
 }
 
-.parents, .parents-optional, 
-.address, .phone-number, 
-.phone-number-optional, .email {
-    width: 30%;
+.street, .number-house,
+.neighborhood, .city {
+    width: 22.5%;
     margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .school-class {
@@ -235,7 +242,13 @@ li p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     padding: 10px;
-    margin-right: 5%;
+    margin-right: auto;
+}
+
+.phone-number, .phone-number-optional,
+.email {
+    width: 30.5%;
+    margin-bottom: 2%;
 }
 
 .date-of-birth:hover, .student-pic:hover {

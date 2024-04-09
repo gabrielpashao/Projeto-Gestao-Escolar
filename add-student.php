@@ -26,23 +26,62 @@
     <section id="add">
 
         <h3>Cadastro de Alunos</h3>
-        <form action="">
-            <input type="text" name="name" class="name" placeholder="Nome do aluno" required="required"> <br>
-            <input type="text" name="address" class="address" placeholder="Endereço" required="required">
+        <form action="new-student.php" method="post">
+            <input type="text" name="name" class="name" placeholder="Nome do aluno" required="required">
+            <label for="date-of-birth">Data de Nascimento: </label>
+            <input type="date" name="date-of-birth" class="date-of-birth" required="required"> <br>
             <input type="text" name="parents" class="parents" placeholder="Pais ou responsáveis" required="required">
             <input type="text" name="parents-optional" class="parents-optional" placeholder="Pais ou responsáveis (opcional)"> <br>
+            <input type="text" name="street" class="street" placeholder="Rua" required="required">
+            <input type="text" name="number-house" class="number-house" placeholder="Número" required="required">
+            <input type="text" name="neighborhood" class="neighborhood" placeholder="Bairro" required="required">
+            <input type="text" name="city" class="city" placeholder="Cidade" required="required"> <br>
             <input type="text" name="phone-number" class="phone-number" placeholder="Telefone ou celular" required="required">
             <input type="text" name="phone-number-optional" class="phone-number-optional" placeholder="Telefone ou celular (opcional)">
             <input type="email" name="email" class="email" placeholder="E-mail"> <br>
-            <label for="date-of-birth">Data de Nascimento: </label>
-            <input type="date" name="date-of-birth" class="date-of-birth" required="required">
+            
             <label for="school-class">Selecione a turma: </label>
             <select name="school-class" class="school-class" required="required">
-                <option value="school-class1">Turma 1</option>
-                <option value="school-class2">Turma 2</option>
-                <option value="school-class3">Turma 3</option>
-                <option value="school-class4">Turma 4</option>
-                <option value="school-class5">Turma 5</option>
+                <option value="">Selecione a turma</option>
+                <?php
+                // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
+                $conexao = new mysqli('localhost', 'root', '', 'escola');
+                $sql = "SELECT id, nome FROM turma";
+                $resultado = $conexao->query($sql);
+
+                // Verifique se a consulta retornou resultados
+                if ($resultado->num_rows > 0) {
+                    // Loop através dos resultados para criar as opções no dropdown
+                    while ($row = $resultado->fetch_assoc()) {
+                        echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
+                    }
+                } else {
+                    echo '<option value="">Nenhuma turma encontrada</option>';
+                }
+
+                // Feche a conexão com o banco de dados
+                $conexao->close();
+                ?>
+            </select> 
+            <label for="semester">Selecione o semestre: </label>
+            <select name="semester" class="semester" required="required">
+                <option value="">Selecione o semestre</option>
+                <?php
+                $conexao = new mysqli('localhost', 'root', '', 'escola');
+                $sql = "SELECT id, ano, periodo FROM semestre";
+                $resultado = $conexao->query($sql);
+
+                if ($resultado->num_rows > 0) {
+                    while ($row = $resultado->fetch_assoc()) {
+                        $semestre = $row['ano'] . '.' . $row['periodo'];
+                        echo '<option value="' . $row['id'] . '">' . $semestre . '</option>';
+                    }
+                } else {
+                    echo '<option value"">Nenhuma turma encontrada</option>';
+                }
+
+                $conexao->close();
+                ?>
             </select> <br>
             <label for="student-pic">Insira a foto do aluno: </label>
             <input type="file" name="student-pic" class="student-pic"> <br>
@@ -50,6 +89,13 @@
         </form>
 
     </section>
+
+    <div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="fechar-popup" onclick="fecharPopup()">&times;</span>
+        <p id="mensagem-popup"></p>
+    </div>
+</div>
 </body>
 
 </html>

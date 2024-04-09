@@ -26,31 +26,94 @@
     <section id="add">
 
         <h3>Cadastro de Notas</h3>
-        <form action="">
+        <form action="new-notes.php" method="post">
             <select name="school-class" class="student-class" required="required">
-                <option value="">Selecione a turma</option>
-                <option value="school-class1">Turma 1</option>
-                <option value="school-class2">Turma 2</option>
+            <option value="">Selecione a turma</option>
+                <?php
+                // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
+                $conexao = new mysqli('localhost', 'root', '', 'escola');
+                $sql = "SELECT id_turma, nome_turma FROM turma";
+                $resultado = $conexao->query($sql);
+
+                // Verifique se a consulta retornou resultados
+                if ($resultado->num_rows > 0) {
+                    // Loop através dos resultados para criar as opções no dropdown
+                    while ($row = $resultado->fetch_assoc()) {
+                        echo '<option value="' . $row['id_turma'] . '">' . $row['nome_turma'] . '</option>';
+                    }
+                } else {
+                    echo '<option value="">Nenhuma turma encontrada</option>';
+                }
+
+                // Feche a conexão com o banco de dados
+                $conexao->close();
+                ?>
             </select>
             <select name="semester" class="student-semester" required="required">
-                <option value="">Selecione o semestre</option>
-                <option value="semester1">2024.1</option>
-                <option value="semester2">2024.2</option>
+            <option value="">Selecione o semestre</option>
+                <?php
+                // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
+                $conexao = new mysqli('localhost', 'root', '', 'escola');
+                $sql = "SELECT id_semestre FROM semestre";
+                $resultado = $conexao->query($sql);
+
+                // Verifique se a consulta retornou resultados
+                if ($resultado->num_rows > 0) {
+                    // Loop através dos resultados para criar as opções no dropdown
+                    while ($row = $resultado->fetch_assoc()) {
+                        echo '<option value="' . $row['id_semestre'] . '">' . $row['id_semestre'] . '</option>';
+                    }
+                } else {
+                    echo '<option value="">Nenhum semestre encontrado</option>';
+                }
+
+                // Feche a conexão com o banco de dados
+                $conexao->close();
+                ?>
             </select>
             <select name="unity" class="student-unity" required="required">
-                <option value="">Selecione a unidade</option>
-                <option value="unity1">Unidade I</option>
-                <option value="unity2">Unidade II</option>
-                <option value="unity3">Unidade III</option>
-                <option value="unity4">Unidade IV</option>
+            <option value="">Selecione a unidade</option>
+                <?php
+                // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
+                $conexao = new mysqli('localhost', 'root', '', 'escola');
+                $sql = "SELECT unidade FROM semestre";
+                $resultado = $conexao->query($sql);
+
+                // Verifique se a consulta retornou resultados
+                if ($resultado->num_rows > 0) {
+                    // Loop através dos resultados para criar as opções no dropdown
+                    while ($row = $resultado->fetch_assoc()) {
+                        echo '<option value="' . $row['unidade'] . '">' . $row['unidade'] . '</option>';
+                    }
+                } else {
+                    echo '<option value="">Nenhuma unidade encontrada</option>';
+                }
+
+                // Feche a conexão com o banco de dados
+                $conexao->close();
+                ?>
             </select> <br>
             <select name="name" class="student-name" required="required">
-                <option value="">Selecione o aluno</option>
-                <option value="student1">Fulaninho da Silva Sauro</option>
-                <option value="student2">Gibalmar Fernandes Aquino</option>
-                <option value="student3">Simas Turbo Pereira</option>
-                <option value="student4">Cuca Beludo Aquino Rego</option>
-                <option value="student5">Jacinto Pinto Aquin Rego</option>
+            <option value="">Selecione o aluno</option>
+                <?php
+                // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
+                $conexao = new mysqli('localhost', 'root', '', 'escola');
+                $sql = "SELECT id_aluno, nome_aluno FROM aluno";
+                $resultado = $conexao->query($sql);
+
+                // Verifique se a consulta retornou resultados
+                if ($resultado->num_rows > 0) {
+                    // Loop através dos resultados para criar as opções no dropdown
+                    while ($row = $resultado->fetch_assoc()) {
+                        echo '<option value="' . $row['id_aluno'] . '">' . $row['nome_aluno'] . '</option>';
+                    }
+                } else {
+                    echo '<option value="">Nenhum aluno encontrado</option>';
+                }
+
+                // Feche a conexão com o banco de dados
+                $conexao->close();
+                ?>
             </select> <br>
             <input type="text" name="av1" class="av1" placeholder="Nota de AV1">
             <input type="text" name="av2" class="av2" placeholder="Nota de AV2">
