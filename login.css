@@ -43,8 +43,9 @@ form {
     border-width: 0px;
 }
 
-#login-block h1, p {
-    color: white;
+#login-block h1, h3,
+label {
+    color: #1a527a;
 }
 
 #login-block button {
@@ -64,4 +65,5 @@ form {
     width: 185px;
     height: 30px;
 }
+
 

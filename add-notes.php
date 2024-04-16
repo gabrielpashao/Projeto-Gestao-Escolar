@@ -27,19 +27,38 @@
 
         <h3>Cadastro de Notas</h3>
         <form action="new-notes.php" method="post">
+            <select name="discipline" class="discipline-class" required="required">
+                <option value="">Selecione a disciplina</option>
+                <?php
+                
+                $conexao = new mysqli('localhost', 'root', '', 'escola');
+                $sql = "SELECT id, nome FROM disciplina";
+                $resultado = $conexao->query($sql);
+
+                if ($resultado->num_rows>0) {
+                    while ($row = $resultado->fetch_assoc()) {
+                        echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
+                    }
+                } else {
+                    echo '<option value="">Nenhuma turma encontrada</option>';
+                }
+
+                $conexao->close();
+                ?>
+            </select>
             <select name="school-class" class="student-class" required="required">
             <option value="">Selecione a turma</option>
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
                 $conexao = new mysqli('localhost', 'root', '', 'escola');
-                $sql = "SELECT id_turma, nome_turma FROM turma";
+                $sql = "SELECT id, nome FROM turma";
                 $resultado = $conexao->query($sql);
 
                 // Verifique se a consulta retornou resultados
                 if ($resultado->num_rows > 0) {
                     // Loop através dos resultados para criar as opções no dropdown
                     while ($row = $resultado->fetch_assoc()) {
-                        echo '<option value="' . $row['id_turma'] . '">' . $row['nome_turma'] . '</option>';
+                        echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
                     }
                 } else {
                     echo '<option value="">Nenhuma turma encontrada</option>';
@@ -54,14 +73,15 @@
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
                 $conexao = new mysqli('localhost', 'root', '', 'escola');
-                $sql = "SELECT id_semestre FROM semestre";
+                $sql = "SELECT id, ano, periodo FROM semestre";
                 $resultado = $conexao->query($sql);
 
                 // Verifique se a consulta retornou resultados
                 if ($resultado->num_rows > 0) {
                     // Loop através dos resultados para criar as opções no dropdown
                     while ($row = $resultado->fetch_assoc()) {
-                        echo '<option value="' . $row['id_semestre'] . '">' . $row['id_semestre'] . '</option>';
+                        $semestre = $row['ano'] . '.' . $row['periodo'];
+                        echo '<option value="' . $row['id'] . '">' . $semestre . '</option>';
                     }
                 } else {
                     echo '<option value="">Nenhum semestre encontrado</option>';
@@ -76,7 +96,7 @@
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
                 $conexao = new mysqli('localhost', 'root', '', 'escola');
-                $sql = "SELECT unidade FROM semestre";
+                $sql = "SELECT unidade FROM unidade_semestre WHERE id_semestre = '$id'";
                 $resultado = $conexao->query($sql);
 
                 // Verifique se a consulta retornou resultados
@@ -98,14 +118,14 @@
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
                 $conexao = new mysqli('localhost', 'root', '', 'escola');
-                $sql = "SELECT id_aluno, nome_aluno FROM aluno";
+                $sql = "SELECT id, nome FROM aluno";
                 $resultado = $conexao->query($sql);
 
                 // Verifique se a consulta retornou resultados
                 if ($resultado->num_rows > 0) {
                     // Loop através dos resultados para criar as opções no dropdown
                     while ($row = $resultado->fetch_assoc()) {
-                        echo '<option value="' . $row['id_aluno'] . '">' . $row['nome_aluno'] . '</option>';
+                        echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
                     }
                 } else {
                     echo '<option value="">Nenhum aluno encontrado</option>';
