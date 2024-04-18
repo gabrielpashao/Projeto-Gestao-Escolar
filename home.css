@@ -207,27 +207,24 @@ li p {
 }
 
 .name {
-    width: 65%;
-    margin-bottom: 0%;
-    margin-right: 2%;
+    width: 95%;
+    margin-bottom: 2%;
 }
 
 .parents, .parents-optional {
-    width: 45.5%;
+    width: 47%;
     margin-bottom: 2%;
 }
 
 .street, .number-house,
 .neighborhood, .city {
-    width: 22.5%;
+    width: 23.1%;
     margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.school-class {
-    margin-right: 5%;
-}
+
 
 .school-class, .shift, .date-of-birth, 
 .student-pic {
@@ -247,7 +244,7 @@ li p {
 
 .phone-number, .phone-number-optional,
 .email {
-    width: 30.5%;
+    width: 31%;
     margin-bottom: 2%;
 }
 

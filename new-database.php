@@ -1,7 +1,5 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupere os dados do formulário
-    $escola = $_POST['school-name'];
 
     // Conectar ao servidor MySQL e criar o banco de dados
     $conexao = new mysqli('localhost', 'root', '');
@@ -10,16 +8,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Criar o banco de dados da escola
-    $sql_create_db = "CREATE DATABASE IF NOT EXISTS `$escola`";
+    $sql_create_db = "CREATE DATABASE IF NOT EXISTS escola";
     if ($conexao->query($sql_create_db) === TRUE) {
-        echo "Banco de dados $escola criado com sucesso.<br>";
+        echo '<script>alert("Banco de dados criado com sucesso!"); window.location.href = "add-admin-welcome.php";</script>';
     } else {
         echo "Erro ao criar o banco de dados: " . $conexao->error . "<br>";
         exit(); // Encerra o script se houver erro
     }
 
     // Selecionar o banco de dados recém-criado
-    $conexao->select_db($escola);
+    $conexao->select_db('escola');
 
     // Ler o conteúdo do arquivo SQL
     $sql_create_tables = file_get_contents('create_database.sql');
@@ -37,7 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Todas as tabelas foram criadas com sucesso
-    echo "Todas as tabelas foram criadas com sucesso.<br>";
+    echo '<script>alert("Todas as tabelas criadas com sucesso"); window.location.href = "add-admin-welcome.php";</script>';
+
 
     // Fechar a conexão
     $conexao->close();

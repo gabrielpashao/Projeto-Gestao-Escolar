@@ -1,4 +1,3 @@
-
 CREATE TABLE aluno (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(255) NOT NULL,
@@ -97,6 +96,7 @@ ADD CONSTRAINT fk_id_turma
     FOREIGN KEY (id_turma)
     REFERENCES turma(id);
 
+DELIMITER //
 CREATE TRIGGER criar_unidades AFTER INSERT ON semestre
 FOR EACH ROW
 BEGIN
@@ -109,3 +109,5 @@ BEGIN
 	INSERT INTO unidade_semestre (id_semestre, unidade) VALUES (semestre, 'III'), (semestre, 'IV');
     END IF;
 END;
+//
+DELIMITER ;

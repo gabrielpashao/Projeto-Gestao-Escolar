@@ -28,8 +28,6 @@
         <h3>Cadastro de Alunos</h3>
         <form action="new-student.php" method="post">
             <input type="text" name="name" class="name" placeholder="Nome do aluno" required="required">
-            <label for="date-of-birth">Data de Nascimento: </label>
-            <input type="date" name="date-of-birth" class="date-of-birth" required="required"> <br>
             <input type="text" name="parents" class="parents" placeholder="Pais ou responsáveis" required="required">
             <input type="text" name="parents-optional" class="parents-optional" placeholder="Pais ou responsáveis (opcional)"> <br>
             <input type="text" name="street" class="street" placeholder="Rua" required="required">
@@ -82,7 +80,9 @@
 
                 $conexao->close();
                 ?>
-            </select> <br>
+            </select>
+            <label for="date-of-birth">Data de Nascimento: </label>
+            <input type="date" name="date-of-birth" class="date-of-birth" required="required"> <br>
             <label for="student-pic">Insira a foto do aluno: </label>
             <input type="file" name="student-pic" class="student-pic"> <br>
             <button type="submit" name="submit">Cadastrar</button>

@@ -1,4 +1,6 @@
 <?php
+$escola = isset($_POST['school-name']) ? $_POST['school-name'] : '';
+
 // Parâmetros de conexão
 $host = "localhost"; // ou o endereço do seu servidor MySQL
 $usuario = "root";
