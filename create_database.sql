@@ -90,24 +90,23 @@ CREATE TABLE turma (
 	FOREIGN KEY (id_disciplina) REFERENCES disciplina(id)
 );
 
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(255) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    tipo_usuario ENUM('aluno', 'professor', 'gestor') NOT NULL,
+    id_aluno INT,
+    id_professor INT,
+    id_gestor INT,
+    FOREIGN KEY (id_aluno) REFERENCES aluno(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_professor) REFERENCES professor(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_gestor) REFERENCES gestor(id) ON DELETE CASCADE
+);
+
 ALTER TABLE aluno
 ADD COLUMN id_turma INT,
 ADD CONSTRAINT fk_id_turma
     FOREIGN KEY (id_turma)
     REFERENCES turma(id);
-
-DELIMITER //
-CREATE TRIGGER criar_unidades AFTER INSERT ON semestre
-FOR EACH ROW
-BEGIN
-    DECLARE semestre INT;
-    SET semestre = NEW.id;
-    
-    IF NEW.periodo = 1 THEN
-    	INSERT INTO unidade_semestre (id_semestre, unidade) VALUES (semestre, 'I'), (semestre, 'II');
-    ELSE
-	INSERT INTO unidade_semestre (id_semestre, unidade) VALUES (semestre, 'III'), (semestre, 'IV');
-    END IF;
-END;
-//
-DELIMITER ;
