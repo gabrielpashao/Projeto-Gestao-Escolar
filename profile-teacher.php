@@ -10,7 +10,7 @@
 
 <body>
     <nav>
-        <a href="home-student.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
+        <a href="home-teacher.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
         <a href="profile-teacher.php" class="perfil"><button>Perfil</button></a>
         <select onchange="location = this.value;" class="add">
             <option value="">Central do Professor</option>

@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Executar a consulta SQL para inserir a turma
             if ($conexao->query($sql_turma) === TRUE) {
-                echo '<script>alert("Turma cadastrada com sucesso!"); window.location.href = "home.php";</script>';
+                echo '<script>alert("Turma cadastrada com sucesso!"); window.location.href = "home-manager.php";</script>';
             } else {
                 echo '<script>alert("Erro ao cadastrar a turma"); window.location.href = "add-class-welcome.php";</script>';
             }
