@@ -10,7 +10,7 @@
     <div id="login-block">
         <img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logo of the company." class="logo"> <br> <br>
         <h1>Cadastrar primeira turma</h1>
-        <form method="post" action="new-class.php">
+        <form method="post" action="new-class-welcome.php">
                 <label for="year-semester">Insira o ano inicial:</label> <br>
                 <input type="text" name="year-semester" placeholder="Ex.: 2023" required="required"> <br> <br>
                 <label for="period-semester">Insira o semestre inicial</label> <br>

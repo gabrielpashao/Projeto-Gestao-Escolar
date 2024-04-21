@@ -8,12 +8,31 @@
 </head>
 <body>
     <nav>
-        <a href="home-student.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
-        <a href="profile-student.php" class="perfil"><button>Perfil</button></a>
+        <a href="home-manager.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
+        <a href="profile-manager.php" class="perfil"><button>Perfil</button></a>
         <select onchange="location = this.value;" class="add">
-            <option value="">Central do Aluno</option>
-            <option value="view-notes.php">Visualizar Notas</option>
-            <option value="view-absence.php">Visualizar Faltas</option>
+            <option value="">Cadastrar/ Adicionar</option>
+            <option value="add-student.php">Cadastrar aluno</option>
+            <option value="add-teacher.php">Cadastrar professor</option>
+            <option value="add-class.php">Cadastrar turma</option>
+            <option value="add-discipline.php">Cadastrar disciplina</option>
+            <option value="add-user.php">Cadastrar usuário</option>
+        </select>
+        <select onchange="location = this.value;" class="add">
+            <option value="">Editar/ Atualizar</option>
+            <option value="update-student.php">Cadastrar aluno</option>
+            <option value="update-teacher.php">Cadastrar professor</option>
+            <option value="update-class.php">Cadastrar turma</option>
+            <option value="update-discipline.php">Cadastrar disciplina</option>
+            <option value="update-user.php">Cadastrar usuário</option>
+        </select>
+        <select onchange="location = this.value;" class="add">
+            <option value="">Excluir/ Deletar</option>
+            <option value="delete-student.php">Cadastrar aluno</option>
+            <option value="delete-teacher.php">Cadastrar professor</option>
+            <option value="delete-class.php">Cadastrar turma</option>
+            <option value="delete-discipline.php">Cadastrar disciplina</option>
+            <option value="delete.php">Cadastrar usuário</option>
         </select>
         <a href="help.php" class="help"><button>Ajuda</button></a>
         <a href="logout.php" class="logout"><button>Sair</button></a>

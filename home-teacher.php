@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
     <title>Página Inicial</title>
 </head>
+
 <body>
     <nav>
-        <a href="home.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
-        <a href="perfil.php" class="perfil"><button>Perfil</button></a>
+        <a href="home-student.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
+        <a href="profile-teacher.php" class="perfil"><button>Perfil</button></a>
         <select onchange="location = this.value;" class="add">
-            <option value="">Cadastrar/Adicionar</option>
-            <option value="add-student.php">Cadastrar aluno</option>
-            <option value="add-notes.php">Cadastrar notas</option>
-            <option value="add-absence.php">Cadastrar faltas</option>
+            <option value="">Central do Professor</option>
+            <option value="add-notes.php">Cadastrar Notas</option>
+            <option value="add-absence.php">Cadastrar Faltas</option>
         </select>
-        <a href="view.php" class="view"><button>Consultar</button></a>
         <a href="help.php" class="help"><button>Ajuda</button></a>
         <a href="logout.php" class="logout"><button>Sair</button></a>
     </nav>
@@ -25,7 +25,7 @@
         <h1>Principais novidades no sistema!</h1>
         <p>Nesta seção ficarão as principais informações e novidades sobre o sistema. Como o programa ainda não está pronto e esse é um protótipo, reservarmos esse espaço para uma breve apresentação do que será possível encontrar por aqui.</p>
         <p>Esse portal trata-se de um programa de gestão escolar, onde nosso objetivo é atender pequenas ou médias escolas que querem ter um controle melhor de seus alunos e oferecer maior comodidade no acesso a informações aos mesmos quanto aos responsáveis. Vamos a alguns exemplos:</p>
-        
+
         <li>
             Acesso para Professores/Gestores e Alunos/Responsáveis
             <p>Pretendemos oferecer um portal disponível para os dois lados do cotidiano escolar: o discente e doscente. No acesso de <b>Professor/Gestor</b>, será possível visualizar ou adicionar (a depender do seu nível de permissão de acesso) turmas, notas, alunos, informações, entre outros. Já no acesso para <b>Alunos/Responsáveis</b> será possível visualizar boletim escolar, informações enviadas pelo professor ou instituição, frequência de aulas, quadro de horário, entre outras funcionalidades pertinentes.</p>
@@ -63,4 +63,5 @@
         <p>Sit amet facilisis magna etiam tempor orci eu lobortis. Sit amet mauris commodo quis imperdiet massa tincidunt nunc. Massa id neque aliquam vestibulum morbi blandit cursus. Molestie a iaculis at erat pellentesque adipiscing commodo. Ornare lectus sit amet est placerat in. Mattis rhoncus urna neque viverra justo nec ultrices. Quisque id diam vel quam elementum pulvinar etiam non quam. Augue interdum velit euismod in pellentesque massa placerat duis. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Volutpat diam ut venenatis tellus in metus vulputate. Consectetur adipiscing elit pellentesque habitant morbi.</p>
     </section>
 </body>
+
 </html>

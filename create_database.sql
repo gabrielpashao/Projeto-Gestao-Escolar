@@ -94,7 +94,6 @@ CREATE TABLE usuarios (
     id INT PRIMARY KEY AUTO_INCREMENT,
     login VARCHAR(255) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     tipo_usuario ENUM('aluno', 'professor', 'gestor') NOT NULL,
     id_aluno INT,

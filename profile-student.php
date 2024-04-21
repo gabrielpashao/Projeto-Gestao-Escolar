@@ -11,11 +11,11 @@
 <body>
     <nav>
         <a href="home-student.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
-        <a href="profile-student.php" class="perfil"><button>Perfil</button></a>
+        <a href="profile-teacher.php" class="perfil"><button>Perfil</button></a>
         <select onchange="location = this.value;" class="add">
-            <option value="">Central do Aluno</option>
-            <option value="view-notes.php">Notas</option>
-            <option value="view-absence.php">Faltas</option>
+            <option value="">Central do Professor</option>
+            <option value="add-notes.php">Cadastrar Notas</option>
+            <option value="add-absence.php">Cdastrar Faltas</option>
         </select>
         <a href="help.php" class="help"><button>Ajuda</button></a>
         <a href="logout.php" class="logout"><button>Sair</button></a>

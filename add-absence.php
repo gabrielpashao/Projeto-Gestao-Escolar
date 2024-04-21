@@ -10,15 +10,13 @@
 
 <body>
     <nav>
-        <a href="home.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
-        <a href="perfil.php" class="perfil"><button>Perfil</button></a>
+        <a href="home-student.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
+        <a href="profile-teacher.php" class="perfil"><button>Perfil</button></a>
         <select onchange="location = this.value;" class="add">
-            <option value="">Cadastrar/Adicionar</option>
-            <option value="add-student.php">Cadastrar aluno</option>
-            <option value="add-notes.php">Cadastrar notas</option>
-            <option value="add-absence.php">Cadastrar faltas</option>
+            <option value="">Central do Professor</option>
+            <option value="add-notes.php">Cadastrar Notas</option>
+            <option value="add-absence.php">Cadastrar Faltas</option>
         </select>
-        <a href="view.php" class="view"><button>Consultar</button></a>
         <a href="help.php" class="help"><button>Ajuda</button></a>
         <a href="logout.php" class="logout"><button>Sair</button></a>
     </nav>
@@ -27,7 +25,7 @@
 
         <h3>Cadastro de Faltas</h3>
         <form action="">
-            
+
             <select name="school-class" class="student-class" required="required">
                 <option value="">Selecione a turma</option>
                 <option value="school-class1">Turma 1</option>

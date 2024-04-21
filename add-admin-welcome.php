@@ -10,7 +10,7 @@
     <div id="login-block">
         <img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logo of the company." class="logo"> <br> <br>
         <h1>Informações do Gestor</h1>
-        <form method="post" action="new-admin.php">
+        <form method="post" action="new-admin-welcome.php">
                 <label for="admin-name">Digite seu nome</label> <br>
                 <input type="text" name="admin-name" placeholder="Ex.: Mária de Fátima" required="required"> <br> <br>
                 <label for="admin-email">Digite o seu e-mail:</label> <br>

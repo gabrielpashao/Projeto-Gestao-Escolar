@@ -9,16 +9,33 @@
 </head>
 
 <body>
-    <nav>
-        <a href="home.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
-        <a href="perfil.php" class="perfil"><button>Perfil</button></a>
+<nav>
+        <a href="home-manager.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
+        <a href="profile-manager.php" class="perfil"><button>Perfil</button></a>
         <select onchange="location = this.value;" class="add">
-            <option value="">Cadastrar/Adicionar</option>
+            <option value="">Cadastrar/ Adicionar</option>
             <option value="add-student.php">Cadastrar aluno</option>
-            <option value="add-notes.php">Cadastrar notas</option>
-            <option value="add-absence.php">Cadastrar faltas</option>
+            <option value="add-teacher.php">Cadastrar professor</option>
+            <option value="add-class.php">Cadastrar turma</option>
+            <option value="add-discipline.php">Cadastrar disciplina</option>
+            <option value="add-user.php">Cadastrar usuário</option>
         </select>
-        <a href="view.php" class="view"><button>Consultar</button></a>
+        <select onchange="location = this.value;" class="add">
+            <option value="">Editar/ Atualizar</option>
+            <option value="update-student.php">Cadastrar aluno</option>
+            <option value="update-teacher.php">Cadastrar professor</option>
+            <option value="update-class.php">Cadastrar turma</option>
+            <option value="update-discipline.php">Cadastrar disciplina</option>
+            <option value="update-user.php">Cadastrar usuário</option>
+        </select>
+        <select onchange="location = this.value;" class="add">
+            <option value="">Excluir/ Deletar</option>
+            <option value="delete-student.php">Cadastrar aluno</option>
+            <option value="delete-teacher.php">Cadastrar professor</option>
+            <option value="delete-class.php">Cadastrar turma</option>
+            <option value="delete-discipline.php">Cadastrar disciplina</option>
+            <option value="delete.php">Cadastrar usuário</option>
+        </select>
         <a href="help.php" class="help"><button>Ajuda</button></a>
         <a href="logout.php" class="logout"><button>Sair</button></a>
     </nav>
@@ -38,7 +55,6 @@
             <input type="text" name="phone-number-optional" class="phone-number-optional" placeholder="Telefone ou celular (opcional)">
             <input type="email" name="email" class="email" placeholder="E-mail"> <br>
             
-            <label for="school-class">Selecione a turma: </label>
             <select name="school-class" class="school-class" required="required">
                 <option value="">Selecione a turma</option>
                 <?php
@@ -61,7 +77,6 @@
                 $conexao->close();
                 ?>
             </select> 
-            <label for="semester">Selecione o semestre: </label>
             <select name="semester" class="semester" required="required">
                 <option value="">Selecione o semestre</option>
                 <?php
@@ -80,7 +95,7 @@
 
                 $conexao->close();
                 ?>
-            </select>
+            </select> <br>
             <label for="date-of-birth">Data de Nascimento: </label>
             <input type="date" name="date-of-birth" class="date-of-birth" required="required"> <br>
             <label for="student-pic">Insira a foto do aluno: </label>
@@ -89,13 +104,6 @@
         </form>
 
     </section>
-
-    <div id="popup" class="popup">
-    <div class="popup-content">
-        <span class="fechar-popup" onclick="fecharPopup()">&times;</span>
-        <p id="mensagem-popup"></p>
-    </div>
-</div>
 </body>
 
 </html>

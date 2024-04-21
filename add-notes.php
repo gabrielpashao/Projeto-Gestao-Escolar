@@ -10,15 +10,13 @@
 
 <body>
     <nav>
-        <a href="home.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
-        <a href="perfil.php" class="perfil"><button>Perfil</button></a>
+        <a href="home-student.php" class="logo"><img src="src/img/Nome do sitema (1)-Photoroom.png-Photoroom.png" alt="Logotipo do sistema"></a>
+        <a href="profile-teacher.php" class="perfil"><button>Perfil</button></a>
         <select onchange="location = this.value;" class="add">
-            <option value="">Cadastrar/Adicionar</option>
-            <option value="add-student.php">Cadastrar aluno</option>
-            <option value="add-notes.php">Cadastrar notas</option>
-            <option value="add-absence.php">Cadastrar faltas</option>
+            <option value="">Central do Professor</option>
+            <option value="add-notes.php">Cadastrar Notas</option>
+            <option value="add-absence.php">Cadastrar Faltas</option>
         </select>
-        <a href="view.php" class="view"><button>Consultar</button></a>
         <a href="help.php" class="help"><button>Ajuda</button></a>
         <a href="logout.php" class="logout"><button>Sair</button></a>
     </nav>
@@ -30,12 +28,12 @@
             <select name="discipline" class="discipline-class" required="required">
                 <option value="">Selecione a disciplina</option>
                 <?php
-                
+
                 $conexao = new mysqli('localhost', 'root', '', 'escola');
                 $sql = "SELECT id, nome FROM disciplina";
                 $resultado = $conexao->query($sql);
 
-                if ($resultado->num_rows>0) {
+                if ($resultado->num_rows > 0) {
                     while ($row = $resultado->fetch_assoc()) {
                         echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
                     }
@@ -47,7 +45,7 @@
                 ?>
             </select>
             <select name="school-class" class="student-class" required="required">
-            <option value="">Selecione a turma</option>
+                <option value="">Selecione a turma</option>
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
                 $conexao = new mysqli('localhost', 'root', '', 'escola');
@@ -69,7 +67,7 @@
                 ?>
             </select>
             <select name="semester" class="student-semester" required="required">
-            <option value="">Selecione o semestre</option>
+                <option value="">Selecione o semestre</option>
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
                 $conexao = new mysqli('localhost', 'root', '', 'escola');
@@ -92,7 +90,7 @@
                 ?>
             </select>
             <select name="unity" class="student-unity" required="required">
-            <option value="">Selecione a unidade</option>
+                <option value="">Selecione a unidade</option>
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
                 $conexao = new mysqli('localhost', 'root', '', 'escola');
@@ -114,7 +112,7 @@
                 ?>
             </select> <br>
             <select name="name" class="student-name" required="required">
-            <option value="">Selecione o aluno</option>
+                <option value="">Selecione o aluno</option>
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
                 $conexao = new mysqli('localhost', 'root', '', 'escola');

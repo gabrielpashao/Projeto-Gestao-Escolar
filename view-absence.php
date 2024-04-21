@@ -14,8 +14,8 @@
         <a href="profile-student.php" class="perfil"><button>Perfil</button></a>
         <select onchange="location = this.value;" class="add">
             <option value="">Central do Aluno</option>
-            <option value="view-notes.php">Notas</option>
-            <option value="view-absence.php">Faltas</option>
+            <option value="view-notes.php">Visualizar Notas</option>
+            <option value="view-absence.php">Visualizar Faltas</option>
         </select>
         <a href="help.php" class="help"><button>Ajuda</button></a>
         <a href="logout.php" class="logout"><button>Sair</button></a>
