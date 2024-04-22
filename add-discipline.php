@@ -41,7 +41,7 @@
     <section id="add">
 
         <h3>Cadastro de Disciplina</h3>
-        <form action="new-class.php" method="post">
+        <form action="new-discipline.php" method="post">
             <input type="text" name="name-discipline" class="street" placeholder="Nome da disciplina" required="required"> <br>
             <select name="name-teacher" class="name-teacher" required="required">
                 <option value="">Selecione o professor</option>

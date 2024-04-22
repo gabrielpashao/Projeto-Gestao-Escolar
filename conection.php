@@ -1,8 +1,13 @@
 <?php
 $escola = isset($_POST['school-name']) ? $_POST['school-name'] : '';
 
+if ($_SERVER['SERVER_ADDR'] == '127.0.0.1' || $_SERVER['SERVER_ADDR'] == '::1') {
+    $host = '127.0.0.1'; // Servidor local
+} else {
+    $host = 'localhost'; // Outro servidor
+}
+
 // Parâmetros de conexão
-$host = "localhost"; // ou o endereço do seu servidor MySQL
 $usuario = "root";
 $senha = "";
 $banco = "escola"; // o nome do seu banco de dados

@@ -52,7 +52,7 @@ User
             <input type="text" name="phone-number-optional" class="phone-number-optional" placeholder="Telefone ou celular (opcional)">
             <input type="email" name="email" class="email" placeholder="E-mail"> <br>
             
-            <select name="school-class" class="school-class" required="required">
+            <select name="discipline" class="school-class" required="required">
                 <option value="">Selecione a disciplina</option>
                 <?php
                 // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas

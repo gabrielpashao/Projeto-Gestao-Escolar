@@ -1,5 +1,4 @@
-User
-<!D<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,32 +43,31 @@ User
         <h3>Cadastro de Turmas</h3>
         <form action="new-class.php" method="post">
             <input type="text" name="name-class" class="street" placeholder="Nome da turma" required="required"> <br>
-            <label for="school-class">Selecione as disciplinas: </label> <br>
-            <select name="school-class" class="school-class" required="required" multiple="multiple">
-                <?php
-                // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
-                $conexao = new mysqli('localhost', 'root', '', 'escola');
-                $sql = "SELECT id, nome FROM disciplina";
-                $resultado = $conexao->query($sql);
+            <label for="class-discipline">Selecione as disciplinas: </label> <br>
+            <div class="checkbox-discipline">
+            <?php
+            // Conecte-se ao banco de dados e execute a consulta SQL para obter as turmas
+            $conexao = new mysqli('localhost', 'root', '', 'escola');
+            $sql = "SELECT id, nome FROM disciplina";
+            $resultado = $conexao->query($sql);
 
-                // Verifique se a consulta retornou resultados
-                if ($resultado->num_rows > 0) {
-                    // Loop através dos resultados para criar as opções no dropdown
-                    while ($row = $resultado->fetch_assoc()) {
-                        echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
-                    }
-                } else {
-                    echo '<option value="">Nenhuma disciplina encontrada</option>';
+            // Verifique se a consulta retornou resultados
+            if ($resultado->num_rows > 0) {
+                // Loop através dos resultados para criar as checkboxes
+                while ($row = $resultado->fetch_assoc()) {
+                    echo '<input type="checkbox" name="class-discipline[]" value="' . $row['id'] . '"> ' . $row['nome'] . '<br>';
                 }
+            } else {
+                echo '<p>Nenhuma disciplina encontrada</p>';
+            }
 
-                // Feche a conexão com o banco de dados
-                $conexao->close();
-                ?>
-            </select> <br>
+            // Feche a conexão com o banco de dados
+            $conexao->close();
+            ?>
+            </div> <br>
             <button type="submit" name="submit">Cadastrar</button>
         </form>
 
     </section>
 </body>
-</html> 
-
+</html>
